@@ -1,12 +1,12 @@
-let scrollbarMeasure = {
+var scrollbarMeasure = {
   position: 'absolute',
   top: '-9999px',
   width: '50px',
   height: '50px'
 };
 
-let scrollbarVerticalSize;
-let scrollbarHorizontalSize;
+var scrollbarVerticalSize;
+var scrollbarHorizontalSize;
 
 export default function measureScrollbar(direction = 'vertical') {
   if (typeof document === 'undefined' || typeof window === 'undefined') {
@@ -29,7 +29,7 @@ export default function measureScrollbar(direction = 'vertical') {
     scrollDiv.style.overflowX = 'scroll';
   }
   document.body.appendChild(scrollDiv);
-  let size = 0;
+  var size = 0;
   if (isVertical) {
     size = scrollDiv.offsetWidth - scrollDiv.clientWidth;
     scrollbarVerticalSize = size;
