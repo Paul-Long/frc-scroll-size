@@ -1,4 +1,4 @@
-const scrollbarMeasure = {
+let scrollbarMeasure = {
   position: 'absolute',
   top: '-9999px',
   width: '50px',
