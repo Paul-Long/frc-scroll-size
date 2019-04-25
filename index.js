@@ -8,17 +8,18 @@ var scrollbarMeasure = {
 var scrollbarVerticalSize;
 var scrollbarHorizontalSize;
 
-export default function measureScrollbar(direction = 'vertical') {
+exports = module.exports = function measureScrollbar(direction) {
+  direction = direction || 'vertical';
   if (typeof document === 'undefined' || typeof window === 'undefined') {
     return 0;
   }
-  const isVertical = direction === 'vertical';
+  var isVertical = direction === 'vertical';
   if (isVertical && scrollbarVerticalSize) {
     return scrollbarVerticalSize;
   } else if (!isVertical && scrollbarHorizontalSize) {
     return scrollbarHorizontalSize;
   }
-  const scrollDiv = document.createElement('div');
+  var scrollDiv = document.createElement('div');
   Object.keys(scrollbarMeasure).forEach((scrollProp) => {
     scrollDiv.style[scrollProp] = scrollbarMeasure[scrollProp];
   });
